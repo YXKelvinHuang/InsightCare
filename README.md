@@ -1,4 +1,5 @@
-# MBTIFY, a web application that leverages advanced Natural Language Processing and Machine Learning technologies to administer streamlined and adaptive MBTI personality tests through fewer than 10 short-answer questions.
+# MBTIFY
+A web application that leverages advanced Natural Language Processing and Machine Learning technologies to administer streamlined and adaptive MBTI personality tests through fewer than 10 short-answer questions.
 
 ## Inspiration
 Frustrated by the traditional MBTI's barrage of questions? So were we. Introducing MBTIFY: our web application streamlines your MBTI assessment using advanced Natural Language Processing and Machine Learning. Forget the indecision of Likert scales; MBTIFY's conversational AI prompts you with tailored, open-ended questions. Answer naturally—the AI adapts, selecting queries to pinpoint your personality type with ease. Welcome to a smarter, streamlined path to self-discovery.
