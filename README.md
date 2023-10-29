@@ -1,73 +1,47 @@
-# Welcome to Reflex!
+# MBTIFY, a web application that leverages advanced Natural Language Processing and Machine Learning technologies to administer streamlined and adaptive MBTI personality tests through fewer than 10 short-answer questions.
 
-This is the base Reflex template - installed when you run `reflex init`.
+## Inspiration
+Frustrated by the traditional MBTI's barrage of questions? So were we. Introducing MBTIFY: our web application streamlines your MBTI assessment using advanced Natural Language Processing and Machine Learning. Forget the indecision of Likert scales; MBTIFY's conversational AI prompts you with tailored, open-ended questions. Answer naturally—the AI adapts, selecting queries to pinpoint your personality type with ease. Welcome to a smarter, streamlined path to self-discovery.
 
-If you want to use a different template, pass the `--template` flag to `reflex init`.
-For example, if you want a more basic starting point, you can run:
+## What it does
+MBTIFY is a web application designed to administer MBTI personality tests in a more efficient and streamlined manner. Unlike traditional MBTI tests that require answering hundreds of questions, MBTIFY aims to achieve accurate results with fewer than 10 short-answer questions. Users can respond to these questions via text or audio input. The application leverages Natural Language Processing (NLP) and Machine Learning (ML) technologies to analyze the answers and determine the user's MBTI type.
 
-```bash
-reflex init --template blank
-```
+## How we built it
+Frontend: Reflex for a user-friendly interface.
 
-## About this Template
+Voice Recognition: Converts spoken answers to text.
 
-This template has the following directory structure:
+NLP: Cohere and OpenAI analyze responses for emotional and syntactic insights.
 
-```bash
-├── README.md
-├── assets
-├── rxconfig.py
-└── {your_app}
-    ├── __init__.py
-    ├── components
-    │   ├── __init__.py
-    │   └── sidebar.py
-    ├── pages
-    │   ├── __init__.py
-    │   ├── dashboard.py
-    │   ├── index.py
-    │   └── settings.py
-    ├── state.py
-    ├── styles.py
-    ├── templates
-    │   ├── __init__.py
-    │   └── template.py
-    └── {your_app}.py
-```
-
-See the [Project Structure docs](https://reflex.dev/docs/getting-started/project-structure/) for more information on general Reflex project structure.
-
-### Adding Pages
-
-In this template, the pages in your app are defined in `{your_app}/pages/`.
-Each page is a function that returns a Reflex component.
-For example, to edit this page you can modify `{your_app}/pages/index.py`.
-See the [pages docs](https://reflex.dev/docs/components/pages/) for more information on pages.
-
-In this template, instead of using `rx.add_page` or the `@rx.page` decorator,
-we use the `@template` decorator from `{your_app}/templates/template.py`.
-
-To add a new page:
-
-1. Add a new file in `{your_app}/pages/`. We recommend using one file per page, but you can also group pages in a single file.
-2. Add a new function with the `@template` decorator, which takes the same arguments as `@rx.page`.
-3. Import the page in your `{your_app}/pages/__init__.py` file and it will automatically be added to the app.
+ML: Intersystems IntegratedML utilizes 60,000+ Kaggle MBTI questionnaire responses to train a predictive AutoML model. This model interprets Likert scale responses, determining MBTI type with a confidence level. Immediate results are provided if a confidence threshold is met, or the system dynamically selects further clarifying questions.
 
 
-### Adding Components
+## Challenges we ran into
+Reflex on M1 Macs: Faced compatibility issues with the Reflex UI framework on M1 chipset Macs, requiring optimization for cross-platform functionality.
 
-In order to keep your code organized, we recommend putting components that are
-used across multiple pages in the `{your_app}/components/` directory.
+SQLAlchemy with sqlalchemy-iris: Experienced limitations in integrating SQLAlchemy with the sqlalchemy-iris dialect, leading to custom code solutions for effective database operations.
 
-In this template, we have a sidebar component in `{your_app}/components/sidebar.py`.
+IRIS Cloud Connectivity: Encountered difficulties in connecting to the IRIS cloud server, necessitating adjustments in network and security settings for reliable deployment.
 
-### Adding State
+Model Training Time: The machine learning model training took over 6 hours due to the large dataset and complex algorithms, prompting a need for pipeline optimization to enhance efficiency.
 
-In this template, we define the base state of the app in `{your_app}/state.py`.
-The base state is useful for general app state that is used across multiple pages.
+## Accomplishments that we're proud of
+Responsive Design: Developed with Reflex for an adaptive user experience.
 
-In this template, the base state handles the toggle for the sidebar.
+Real-Time ML Analysis: Intersystems algorithms provide instant MBTI prediction with a confidence indicator using SQL. We infer Likert scores from user responses to our conversational prompts using LLM, then input these as features into our predictive model, thereby combining discriminative with generative AI models.
 
-As your app grows, we recommend using [substates](https://reflex.dev/docs/state/substates/)
-to organize your state. You can either define substates in their own files, or if the state is
-specific to a page, you can define it in the page file itself.
+Smart Questioning: A dynamic question bank evolves based on user inputs, distinguishing similar MBTI profiles through adaptive questioning and iterative model refinements with updated scores.
+
+## What we learned
+Stay on Track: Consistently ensure that you are on the right path by periodically reviewing your goals and progress.
+
+Purposeful Implementation: Before committing to a new feature or task, evaluate its significance to avoid exerting effort on non-impactful activities.
+
+## What's next for MBTIFY
+Audio Transcribing: Our roadmap includes the implementation of an advanced audio transcribing feature. This will allow us to extend our voice recognition capabilities to capture even more nuanced responses from users, further refining our MBTI analysis.
+
+Emotion Detection with HumeAI: We plan to integrate HumeAI technology for real-time emotion detection based on the user's voice. This will add an additional layer of depth to the analysis, enabling us to distinguish between closely matched MBTI types with a greater degree of accuracy.
+
+Optimized Machine Learning Algorithms: We aim to continually fine-tune our existing machine learning models within Intersystem to accommodate these new features, ensuring that our confidence levels and MBTI type predictions are as accurate as possible.
+
+Dynamic Questioning 2.0: Building on our adaptive questioning framework, we will incorporate feedback loops that consider not only the content of the user’s responses but also the detected emotional tone. This will make our question selection even more responsive and targeted.
