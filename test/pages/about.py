@@ -11,11 +11,11 @@ color = "rgb(107,99,246)"
 def main_button()-> rx.Component:
     #return rx.link("About page", href="/about")
     return rx.button(
-        rx.link(rx.image(src="/logo2.png", width="13em"), href="http://localhost:3000"),variant="unstyled",
+        rx.link(rx.image(src="/logo22.png", width="13em"), href="http://localhost:3000"),variant="unstyled",
         style={
                 'position': 'fixed',
-                'left': '10',
-                'up': '200',
+                'left': '0',
+                'bottom': '700',
             }
     )
 
@@ -50,12 +50,12 @@ def action_bar() -> rx.Component:
     return rx.hstack(
         rx.input(
             value=State.question,
-            placeholder="Ask a question",
+            placeholder="Send a message",
             on_change=State.set_question,
             style=styles.input_style,
         ),
         rx.button(
-            "Ask",
+            "Send",
             on_click=State.answer,
             style=styles.button_style,
         ),

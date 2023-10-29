@@ -76,8 +76,8 @@ message_style = dict(
 
 # Set specific styles for questions and answers.
 title_style = {**message_style, **dict(bg="#FFD700", margin_left="100")}
-question_style = {**message_style, **dict(bg="#F5EFFE", margin_left="50")}
-answer_style = {**message_style, **dict(bg="#DEEAFD", margin_right="50")}
+question_style = {**message_style, **dict(bg="#F5EFFE", margin_left="100")}
+answer_style = {**message_style, **dict(bg="#DEEAFD", margin_right="100")}
 # Styles for the action bar.
 input_style = dict(
     border_width="1px", padding="1em", box_shadow=shadow

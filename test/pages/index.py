@@ -14,19 +14,19 @@ color = "rgb(107,99,246)"
     # rx.text("Hello World!", color="blue", font_size="1.5em")
 
 def logo() ->rx.Component:
-    return rx.image(src="/logo2.png", width="13em",
+    return rx.image(src="/logo22.png", width="13em",
                     style={
                         'position': 'fixed',
-                        'left': '10',
-                        'bottom': '750',
+                        'left': '0',
+                        'bottom': '600',
                     })
 
 def aboutus() ->rx.Component:
     return rx.image(src="/aboutus.png", width="7em",
                     style={
                         'position': 'fixed',
-                        'right': '200',
-                        'bottom': '700',
+                        'right': '300',
+                        'bottom': '600',
                     })
 
 def qa(question: str, answer: str) -> rx.Component:
@@ -45,12 +45,12 @@ def qa(question: str, answer: str) -> rx.Component:
 def chat() -> rx.Component:
     qa_pairs = [
         (
-            "What is InsightCare?",
-            "A pre-consultation web app about postpartum depression!",
+            "What is MBTIfy?",
+            "Discover your true self with MBTIfy—our quick, intuitive test provides instant MBTI insights for a deeper understanding of you.",
         ),
         (
             "What can I make with it?",
-            "Nothing",
+            "Click on the 'Begin your journey!' button and send 'Start!' to Chatbot beginning your MBTI test.",
         ),
     ]
     return rx.box(
@@ -155,11 +155,11 @@ def another_page()-> rx.Component:
     #return rx.link("About page", href="/about")
     return rx.button(
         "", 
-        rx.link(rx.image(src="/longlogo2.png",width="41em",length="1000em"), href="/about"),variant="unstyled",
+        rx.link(rx.image(src="/longlogo22.png",width="30em",length="1000em"), href="/about"),variant="unstyled",
         style={
             'position': 'fixed',
             'left': '0',
-            'bottom': '700',
+            'bottom': '600',
             'z_index': '1000',  # Optional, to make sure it's above other elements
         }
     )
