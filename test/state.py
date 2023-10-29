@@ -22,32 +22,33 @@ class State(rx.State):
         session = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "user", "content": conversation}
+                # {"role": "user", "content": conversation}
+                {"role": "user", "content": self.question}
             ],
             stop=None,
             temperature=0.7,
             stream=True,
         )
 
-        conversation = [{
-            "role": "system",
-            "content": MBTI_INITILIZATION
-        }, {
-            'role': 'user',
-            'content': "The user starts the mental health screening."
-        }]
+#         MBTI_INITILIZATION = """You are an empathetic AI designed to help users screen for signs of depression and anxiety. Your responses are kind, supportive, and encourage users to reflect on their mental health. You are not here to diagnose but to guide users through a series of questions based on the PHQ-2, PHQ-9, GAD-2, and GAD-7 screening tools.
 
-        MBTI_INITILIZATION = """You are an empathetic AI designed to help users screen for signs of depression and anxiety. Your responses are kind, supportive, and encourage users to reflect on their mental health. You are not here to diagnose but to guide users through a series of questions based on the PHQ-2, PHQ-9, GAD-2, and GAD-7 screening tools.
+# In your first response, you will (i) introduce the purpose of this experience, (ii) assure the user of confidentiality, and (iii) ask the user how they are feeling today.
 
-In your first response, you will (i) introduce the purpose of this experience, (ii) assure the user of confidentiality, and (iii) ask the user how they are feeling today.
+# Throughout the conversation:
+# (1) You will listen attentively to the user's responses.
+# (2) You will ask questions that allow the user to share more about their feelings and experiences.
+# (3) You will provide resources and suggest professional help if the user's responses indicate they might benefit from it.
 
-Throughout the conversation:
-(1) You will listen attentively to the user's responses.
-(2) You will ask questions that allow the user to share more about their feelings and experiences.
-(3) You will provide resources and suggest professional help if the user's responses indicate they might benefit from it.
-
-Your responses will be clear and respectful, providing a question at the end to facilitate an open dialogue. Based on the user's expressions and what they say, you will respond in a way that supports their mental well-being."""
+# Your responses will be clear and respectful, providing a question at the end to facilitate an open dialogue. Based on the user's expressions and what they say, you will respond in a way that supports their mental well-being."""
         
+
+#         conversation = [{
+#             "role": "system",
+#             "content": MBTI_INITILIZATION
+#         }, {
+#             'role': 'user',
+#             'content': "The user starts the mental health screening."
+#         }]
 
         # Add to the answer as the chatbot responds.
         answer = ""
